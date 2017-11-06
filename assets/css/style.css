@@ -12,6 +12,6 @@ font-family: 'Nosifer', cursive;
 }
 
 
-.row {
-    margin-top: 5%
+.jumbotron{
+    background-color: transparent;
 }
