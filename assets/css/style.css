@@ -1,0 +1,17 @@
+header{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+body{
+background-image: url( "../images/tunnelbkg.jpg");
+background-size: cover;
+color: rgba(184, 47, 47, 0.87);
+font-family: 'Nosifer', cursive;
+}
+
+
+.row {
+    margin-top: 5%
+}
