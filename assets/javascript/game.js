@@ -12,7 +12,11 @@ var words1 = [
 
 ];
 
-// document.onkeyup = function(event) {var guess = }
+document.onkeyup = function (event) {
+    var letter = String.fromCharCode(event.keyCode).toLowerCase();
+    console.log(letter);
+}
+
 var word = words1[Math.floor(Math.random() * words1.length)];
     console.log(word);
 // set up answer array
@@ -30,16 +34,17 @@ for (var i = 0; i < remainingLetters; i++) {
 while (remainingLetters > 0) {
     // show the player progress
     var el = document.getElementById("demo");
-    el. innerHTML = answerArray(" ");
+    // ***Uncaught Type error answerArray is not a function line below
+    // el. innerHTML = answerArray.join(" ");
     // get guess from the player
-    var guess = prompt("Guess a letter, or click Cancel to stop playing");
+    var guess = document.getElementById("Guess a letter, or click Cancel to stop playing");
     if (guess === null){
         // exit the game loop
         break;
     } else if (guess.length !== 1);{
         alert("Please enter a single letter");        
-    // } else (guess=== words1)
-        //  {
+    // } else {  (guess.length === words1)
+         
         // update the game state with the guess
         for (var j = 0; j < word.length; j++){
             if (word[j] === guess) {
@@ -52,6 +57,6 @@ while (remainingLetters > 0) {
 // the end of the game loop  below  
 }
 
-el. innerHTML = answerArray.join(" ");
-alert ("Good job! the answer was " + word + ".");
+// el. innerHTML = answerArray.join(" ");
+// alert ("Good job! the answer was " + word + ".");
 
