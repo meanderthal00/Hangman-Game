@@ -15,3 +15,18 @@ font-family: 'Nosifer', cursive;
 .jumbotron{
     background-color: transparent;
 }
+
+p{
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+footer{
+    background-color: transparent;
+    margin-top: 21%;
+    color: darkgrey;
+    text-align: center;
+
+
+}
