@@ -1,62 +1,23 @@
-var words1 = [
-    "elves",
-    "orcs",
-    "halflings",
-    "wizard",
-    "fighter",
-    "thief",
-    "beholder",
-    "dragon",
-    "goblins",
-    "dungeon master"
-
-];
-
+var words1 = ["elves","orcs","halflings","wizard","fighter","thief","beholder","dragon","goblins","dungeon master"];
+var playerGuess =
+// recording user keypress
 document.onkeyup = function (event) {
     var letter = String.fromCharCode(event.keyCode).toLowerCase();
     console.log(letter);
+    var letter = document.getElementById("guessed").innerHTML = letter;
+    
 }
-
+// selecting random word
 var word = words1[Math.floor(Math.random() * words1.length)];
-    console.log(word);
-// set up answer array
+console.log(word);
 var remainingLetters = word.length;
 
+// displaying the answer array
 var answerArray = document.getElementById("demo");
 for (var i = 0; i < remainingLetters; i++) {
-   answerArray.innerHTML += "_"
-    };  
- 
-// creating var to keep track of letters that remain to be guessed
-
-
+    answerArray.innerHTML += "_"
+};
 // the game loop starts here
-while (remainingLetters > 0) {
-    // show the player progress
-    var el = document.getElementById("demo");
-    // ***Uncaught Type error answerArray is not a function line below
-    // el. innerHTML = answerArray.join(" ");
-    // get guess from the player
-    var guess = document.getElementById("Guess a letter, or click Cancel to stop playing");
-    if (guess === null){
-        // exit the game loop
-        break;
-    } else if (guess.length !== 1);{
-        alert("Please enter a single letter");        
-    // } else {  (guess.length === words1)
-         
-        // update the game state with the guess
-        for (var j = 0; j < word.length; j++){
-            if (word[j] === guess) {
-                answerArray[j]= guess;
-                remainingLetters --;
+// while (remainingLetters > 0) {
 
-            }
-        }
-    }
-// the end of the game loop  below  
-}
-
-// el. innerHTML = answerArray.join(" ");
 // alert ("Good job! the answer was " + word + ".");
-
