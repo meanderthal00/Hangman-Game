@@ -28,7 +28,7 @@ for (var i = 0; i < remainingLetters; i++) {
 };
 // checking users input against the answers
 if (possibleLetters.indexOf(words1) === -1) {
-    
+    // moving incorrect guesses to "wrong" array
 } else if (random.indexOf(words1) === -1) {
    wrong.push(letter); 
    console.log("incorrect:", wrong);
