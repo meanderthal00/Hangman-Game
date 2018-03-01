@@ -5,6 +5,11 @@ var possibleLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 var right = [];
 var wrong = [];
 var answer = [];
+
+
+var letterArray = [];
+var word = randomWord();
+var dashArray = [];
 // beginning settings
 var winTotal = 0;
 var lossTotal = 0;
@@ -14,44 +19,61 @@ document.getElementById("wins").innerHTML = winTotal;
 document.getElementById("losses").innerHTML = lossTotal;
 
 // function that turns a string into an array of characters
-function wordToArray (arrWord){
-    letterArray = arrWord.split ("");
+function wordToArray(arrWord) {
+    letterArray = arrWord.split("");
 
 }
 
 // selecting random word
-var word = words1[Math.floor(Math.random() * words1.length)];
-console.log(word + "  is the selected word");
-var remainingLetters = word.length;
+function randomWord() {
+    return words1[Math.floor(Math.random() * words1.length)];
+    // console.log(word + "  is the selected word");
+}
 
-// displaying the answer blanks
-var answerArray = document.getElementById("target");
-for (var i = 0; i < remainingLetters; i++) {
-    answerArray.innerHTML += "_"
-};
+// Function that displays answer blanks and letters
+function dashReplace() {
+    if (dashArray) {
+        document.getElementById("target").innerHTML = dashArray.join(" ");
+    }
+}
+
+// creating dashes
+function dashes() {
+    wordToArray(word);
+for (var i = 0; i < letterArray.length; i++) {
+    dashArray.push("_");
+}
+dashReplace();
+console.log(dashArray);
+
+}
+//  remainingLetters; i++) {
+//     answerArray.innerHTML += "_"
+// };
 
 // recording user keypress
 document.onkeyup = function (event) {
     var letter = String.fromCharCode(event.keyCode).toLowerCase();
-    console.log(letter+" was pressed");
+    console.log(letter + " was pressed");
     var letter = document.getElementById("guessed").innerHTML = letter;
 
 
     // checking users input against the answers
     if (word.indexOf(letter) === -1) {
-    // console.log(letter);
-    // moving incorrect guesses to "wrong" array
+        // console.log(letter);
+        // moving incorrect guesses to "wrong" array
     } else if (letter.indexOf(word) != -1) {
-    wrong.push(letter);
-    console.log(wrong);
+        wrong.push(letter);
+        console.log(wrong);
 
     } else {
-    console.log(letter);
-    for (var j = 0; j < word.length; j++) {
-        right[j] = letter;
-        remainingLetters--;
-        document.getElementById("target").innerHTML = answer.join(letter);
+        console.log(letter);
+        for (var j = 0; j < word.length; j++) {
+            right[j] = letter;
+            remainingLetters--;
+            document.getElementById("target").innerHTML = answer.join(letter);
 
 
-        }    }
+        }
+    }
 }
