@@ -114,29 +114,3 @@ function reset() {
 randomWord();
 dashes();
 userGuess();
-//     // recording user keypress
-
-//     var letter = String.fromCharCode(event.keyCode).toLowerCase();
-//     console.log(letter + " was pressed");
-//     var letter = document.getElementById("guessed").innerHTML = letter;
-
-
-//     // checking users input against the answers
-//     if (word.indexOf(letter) === -1) {
-//         // console.log(letter);
-//         // moving incorrect guesses to "wrong" array
-//     } else if (letter.indexOf(word) != -1) {
-//         wrong.push(letter);
-//         console.log(wrong);
-
-//     } else {
-//         console.log(letter);
-//         for (var j = 0; j < word.length; j++) {
-//             right[j] = letter;
-//             remainingLetters--;
-//             document.getElementById("target").innerHTML = answer.join(letter);
-
-
-//         }
-//     }
-// }
